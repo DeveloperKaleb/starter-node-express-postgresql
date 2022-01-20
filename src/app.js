@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const productsRouter = require("./products/products.router");
 const categoriesRouter = require("./categories/categories.router");
 const suppliersRouter = require("./suppliers/suppliers.router");
 
 app.use(express.json());
+app.use(cors())
 
 app.use("/products", productsRouter);
 app.use("/categories", categoriesRouter);
